@@ -1,24 +1,26 @@
-#include "holberton.h"
-/**
- * _strspn - prints the consecutive caracters of s1 that are in s2.
- * @s: source string
- * @accept: searching string
- *
- * Return: new string.
- */
-unsigned int _strspn(char *s, char *accept)
-{
-	unsigned int i, j;
+#include "main.h"
 
-	for (j = 0; *(s + j); j++)
+/**
+* _strchr - Loctes a character in a string
+*
+* @s: The string to check
+*
+* @c: The character to find
+*
+* Return: Pointer to @s or NULL
+*
+*/
+char *_strchr(char *s, char c)
+{
+	while (*s)
 	{
-		for (i = 0; *(accept + i); i++)
+		s++;
+
+		if (*s == c)
 		{
-			if (*(s + j) == *(accept + i))
-				break;
+			return (s);
 		}
-	if (*(accept + i) == '\0')
-		break;
 	}
-	return (j);
+
+	return (0);
 }
